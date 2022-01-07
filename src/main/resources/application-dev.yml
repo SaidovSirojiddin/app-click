@@ -1,0 +1,27 @@
+server:
+  port: 88
+spring:
+  application:
+    name: CLICK-SERVICE
+  datasource:
+    url: jdbc:postgresql://localhost:5432/click
+    username: postgres
+    password: root123
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans:true
+  sql:
+    init:
+      mode: never
+logging:
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+  file:
+    name: click.log
+  level:
+    org.springframework.web: ERROR
+    org.hibernate: ERROR
